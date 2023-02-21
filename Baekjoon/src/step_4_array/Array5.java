@@ -1,17 +1,33 @@
 package step_4_array;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
 public class Array5 {
-	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int[] ar = new int[30], tmp= new int[2];
-		for(int i=0; i<28; i++) {
-			ar[s.nextInt()-1]++;
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		String[] input = br.readLine().split(" ");
+		int n = Integer.parseInt(input[0]);
+		int m = Integer.parseInt(input[1]);
+		int[] ar = new int[n];
+		for (int i = 0; i < m; i++) {
+		    input = br.readLine().split(" ");
+		    int start = Integer.parseInt(input[0]);
+		    int end = Integer.parseInt(input[1]);
+		    int value = Integer.parseInt(input[2]);
+		    for (int j = start; j <= end; j++) {
+		        ar[j-1] = value;
+		    }
 		}
-		for(int i=0; i<30; i++) {
-			if(ar[i] == 0) System.out.println(i+1);
+		for (int d : ar) {
+		    bw.write(d+" ");
 		}
+		bw.flush();
+
 	}
 }
-
-

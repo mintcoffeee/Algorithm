@@ -1,24 +1,17 @@
 package step_4_array;
 
-import java.util.Arrays;
-import java.util.Scanner;import java.util.StringTokenizer;
-
+import java.util.Scanner;
 public class Array7 {
-
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		StringTokenizer st;double avg=0, sum=0;
-		int n = s.nextInt();
-		int[] ar = new int[n];
-		for(int i=0;i<n;i++) {
-			st = new StringTokenizer(s.next());
-			ar[i] = Integer.parseInt(st.nextToken());
+		int[] ar = new int[30], tmp= new int[2];
+		for(int i=0; i<28; i++) {
+			ar[s.nextInt()-1]++;
 		}
-		int max=Arrays.stream(ar).max().getAsInt();
-		for(int i=0;i<n;i++) {
-			sum  += (ar[i]/(double)max) * 100 ;
+		for(int i=0; i<30; i++) {
+			if(ar[i] == 0) System.out.println(i+1);
 		}
-		System.out.println(sum/n);
-		
 	}
 }
+
+
